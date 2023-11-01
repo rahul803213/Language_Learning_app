@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+  font-family: 'DIN Round Pro';
+  src: local('DIN Round Pro Black'), local('DIN-Round-Pro-Black'),
+      url('DINRoundPro-Black.woff2') format('woff2'),
+      url('DINRoundPro-Black.woff') format('woff'),
+      url('DINRoundPro-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@layer base {
+  body {
+    font-family: 'DIN Round Pro', sans-serif;
+    background-color:white; /* Change the background color to gray-100 if that's your intention */
+    padding: 2rem; /* Adjust the padding to your needs */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh; /* Use 100vh for full viewport height */
+  }
+}
+@layer components{
+  .intent{
+  @apply flex justify-between items-center hover:shadow-xl p-4 cursor-pointer rounded-lg 
+       text-black bg-white max-w-md mx-auto xl:mx-0;    }
+}
