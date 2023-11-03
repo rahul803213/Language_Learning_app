@@ -18,8 +18,8 @@ import {
 import Link from "next/link";
 
 const SignIn = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("test@gmail.com");
+  const [password, setPassword] = useState("testtest");
   const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
   const router = useRouter();
