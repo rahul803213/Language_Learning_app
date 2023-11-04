@@ -152,6 +152,7 @@ export const fetchAllUsersWithProgress = async () => {
     const usersData = sortedArr.map((user) => ({
       name: user.displayName,
       progress: user.Progress,
+      language: user.want_to_learn
     }));
 
     return usersData;
@@ -172,7 +173,10 @@ export const updateUserProgress = async (uid, attribute, value) => {
 
     await userRef.update({
       [attribute]: value,
+
     });
+   
+   
 
     console.log(`User ${uid} ${attribute} updated to ${value}`);
   } catch (error) {

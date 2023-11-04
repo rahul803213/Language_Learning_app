@@ -9,7 +9,6 @@ import { updateUserProgress } from "@/firebase/firebase.utils";
 import {
   setCurrentQuestionIndexToZero,
   toggleShowNextButton,
-  resetMarks,
   setFullMarks,
 } from "@/redux/question/questionSlice";
 import { nextQuestion } from "@/redux/question/questionSlice";
