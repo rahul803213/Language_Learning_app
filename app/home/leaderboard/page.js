@@ -37,7 +37,7 @@ console.log({"user":user})
         <h1 className="text-3xl text-red-500 text-center">LeaderBoard</h1>
       <div className="flex flex-row-reverse">
         <label >
-         <span className="text-2xl text-yellow-500">Country : </span> 
+         <span className="text-2xl text-yellow-500">Language : </span> 
           <select name="language" value={selectedLanguage} onChange={handleLanguageChange}>
           <option value="English">English</option>
     <option value="Spanish">Spanish</option>
