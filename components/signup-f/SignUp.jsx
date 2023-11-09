@@ -57,7 +57,6 @@ const SignUp = () => {
     event.preventDefault();
     if (state.step < 2) {
       setState({ ...state, step: state.step + 1 });
-      console.log(state.step);
     } else {
       const {
         email,
@@ -85,7 +84,6 @@ const SignUp = () => {
 
           // Get the user object and log the displayName
           const user = auth.currentUser;
-          console.log("User's displayName:", user.displayName);
           const id = user.uid;
           // Create the user profile document
           const userDocumentRef = await createUserProfileDocument(user, {
@@ -100,7 +98,6 @@ const SignUp = () => {
           // Fetch and log user data from the user profile document
           const docSnapshot = await userDocumentRef.get();
           const userData = docSnapshot.data();
-          console.log("User data:", userData);
           dispatch(setCurrentUser(userData));
           setTokenInLocal(userData);
           router.push("/home/learn");

@@ -27,11 +27,9 @@ function Page() {
   const [previousQuestion, setPreviousQuestion] = useState(null);
   const full_marks = useSelector((state) => state.questionReducer.fullmarks);
   const user = useSelector((state) => state.userReducer.user);
-  console.log({ quiz: user });
   const token = getTokenFromLocal();
   //const QuestionInTheQuiz =5;
   const Router = useRouter();
-  console.log({ questions: questions });
   useEffect(() => {
     if (!token) {
       // dispatch(removeCurrentUser());
@@ -58,7 +56,6 @@ function Page() {
     setUserName(userName);
     setUserScore(userScore);
     setShowResultCard(true);
-    console.log("rahul");
   };
   // Function to select a question based on the current level
   const selectQuestion = () => {
@@ -99,9 +96,7 @@ function Page() {
     dispatch(toggleShowNextButton());
   };
 
-  const handlePrevQuestion = () => {
-    dispatch(prevQuestion());
-  };
+  
 
   // Function to save user responses
   const saveUserResponse = (response, correctAnswer, level, questionName) => {
@@ -143,10 +138,7 @@ function Page() {
       });
       setUserResponses(updatedResponses);
 
-      console.log("Updated Response:", response);
-      console.log("Correct Answer:", correctAnswer);
-      console.log("Level:", level);
-      console.log("Question Name:", questionName);
+     
     } else {
       // No duplicate, add the response
       const updatedResponses = [
@@ -155,10 +147,7 @@ function Page() {
       ];
       setUserResponses(updatedResponses);
 
-      console.log("Saved Response:", response);
-      console.log("Correct Answer:", correctAnswer);
-      console.log("Level:", level);
-      console.log("Question Name:", questionName);
+     
     }
 
     // Handle saving the user response and other logic
@@ -181,11 +170,8 @@ function Page() {
     });
 
     // Log the total marks to the console
-    console.log("Total Marks:", totalMarks);
-    console.log(full_marks);
-    console.log(userResponses);
+   
     const percentage = (totalMarks / full_marks) * 100;
-    console.log({ percentage: percentage });
     updateUserProgress(user.id, "Progress", Math.floor(percentage));
     dispatch(setFullMarks(0));
     dispatch(setCurrentQuestionIndexToZero());

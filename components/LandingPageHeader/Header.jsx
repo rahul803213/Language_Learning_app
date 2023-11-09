@@ -6,7 +6,6 @@ import RightNav from "../right-nav/RightNav";
 
 const Header = ({ user }) => {
   const pathname = usePathname();
-  console.log(user);
   return (
     <header className=" text-black sm:py-4 p-2 w-full">
       <div className="max-w-screen-xl mx-auto flex justify-between items-center">

@@ -12,7 +12,6 @@ import {
 import { setCurrentUser } from "@/redux/user/userSlice";
 const Learn = () => {
   const user = useSelector((state) => state.userReducer.user);
-  console.log({ learn: user });
   const [selectedLesson, setSelectedLesson] = useState(null);
   const [loading, setLoading] = useState(false);
   const Router = useRouter();
@@ -37,7 +36,6 @@ const Learn = () => {
 
     if (lesson) {
       const { questions } = lesson;
-      console.log(questions);
       dispatch(setQuestions(questions));
       dispatch(resetMarks());
       Router.push("/home/quiz");

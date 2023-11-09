@@ -39,14 +39,11 @@ const SignIn = () => {
 
         setEmail("");
         setPassword("");
-        console.log("userData", userData);
-        // console.log("user");
         dispatch(setCurrentUser(userData));
         setTokenInLocal(userData);
         router.push("/home/learn");
       } else {
         // Handle the case where the document doesn't exist
-        console.log("User document does not exist.");
       }
     } catch (error) {
       setEmail("");

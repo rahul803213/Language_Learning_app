@@ -62,7 +62,6 @@ export const converCollectionsToMaps = (collectionssnapshot) => {
       items,
     };
   });
-  console.log("transformedCollection", transformedCollection);
   return transformedCollection.reduce((accumulator, collection) => {
     var element = collection;
     accumulator.push(element);
@@ -87,7 +86,6 @@ Set a listener to receive data-change events. */
   //console.log(snapShot);
   if (!snapShot.exits) {
     const { displayName, email } = userAuth;
-    console.log(displayName);
     //if(additionalData) displayName=additionalData.displayName;
     const createdAt = new Date();
 
@@ -114,7 +112,6 @@ export const fetchUserDetails = async (userId) => {
     if (userDoc.exists) {
       const userData = userDoc.data();
       userData.id = userId;
-      console.log(userData);
       setTokenInLocal(userData);
       return userData;
     } else {

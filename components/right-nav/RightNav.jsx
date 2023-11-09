@@ -10,9 +10,7 @@ import { removeTokenFromLocalMeansLogout } from "@/client-helper/authHelper";
 import Spinner from "../Spinner/Spinner";
 const RightNav = () => {
   const user = useSelector((state) => state.userReducer.user);
-  console.log({ "right nav": user });
   const token = getTokenFromLocal();
-  const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
   const Router = useRouter();
   useEffect(() => {

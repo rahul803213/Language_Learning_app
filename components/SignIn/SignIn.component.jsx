@@ -32,8 +32,6 @@ class SignIn extends React.Component {
       const { user } = await auth.signInWithEmailAndPassword(email, password);
       // const user =  userCredential.user;
       this.setState({ email: "", password: "" });
-      console.log(user);
-      console.log("user");
       //  window.location.href = '/';
     } catch (error) {
       //  console.log(error);

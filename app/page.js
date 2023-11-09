@@ -20,7 +20,6 @@ function LandingPage() {
 
         if (lesson1) {
           const { questions } = lesson1;
-          console.log(questions);
         }
       };
       fetchData();

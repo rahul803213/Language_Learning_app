@@ -13,7 +13,6 @@ const Profile = () => {
   const user = useSelector((state) => state.userReducer.user);
   const [loading, setLoading] = useState(false);
   // Function to reset progress
-  console.log({ user: user });
 
   const token = getTokenFromLocal();
   const dispatch = useDispatch();
@@ -35,7 +34,6 @@ const Profile = () => {
       const fetchAndDispatchUserDetails = async () => {
         try {
           const user = await fetchUserDetails(token.id);
-          console.log({ user: user });
           dispatch(setCurrentUser(user));
         } catch (error) {
           console.error("Error:", error);
